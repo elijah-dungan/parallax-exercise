@@ -1,10 +1,9 @@
 * {
-    background-color: black;
     color: black;
     text-align: center;
 }
 body {
-    background-color: gray;
+    background-color: black;
     margin: 0; /* removes default margins from body */
 }
 #stickyheader {
@@ -33,11 +32,11 @@ nav ul li{ /* contains the list strings */
     display: inline-block; /* displays list horizonally */
     margin: 0 10% 0 10%; /* sets space between strings */
 }
-.main {
+main {
     display: inline-block;
     background-color: blue;
     border: 2px solid red;
-    width: 60%;
+    width: 960px;
     margin: 0 0 -5px 0; /* top margin ensures that top of lower container does not initially hide behind header */
     overflow: auto; /* keeps parent container from collapsing on left and right floats */
     padding: 10px;
@@ -50,13 +49,14 @@ nav ul li{ /* contains the list strings */
     width: auto;
     z-index: 999;
 }
-.sticky + .main {
-    padding-top: 198px;
+.sticky + main {
+    padding-top: 201px;
 }
 footer {
     border: 2px solid red;
     background-color: purple;
     padding: 10px;
+    min-width: 960px;
 }
 h1 {
     border: 2px solid red;
@@ -77,15 +77,13 @@ p {
     border: 2px solid red;
     background-color: orange;
     float: left;
-    width: 45%;
+    width: 47%;
     padding: 10px;
-    margin: 0 5px 0 5px;
 }
 #right {
     border: 2px solid red;
     background-color: teal;
-    float: left;
-    width: 45%;
+    float: right;
+    width: 47%;
     padding: 10px;
-    margin: 0 5px 0 5px;
 }
