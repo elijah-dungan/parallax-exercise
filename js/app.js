@@ -15,13 +15,15 @@ var sticky = nav.offsetTop;
 function makeSticky() {
   var grabElement = document.getElementById('stickynav');
   var grabList = document.getElementsByClassName('navListItem');
-  if(window.pageYOffset > sticky || window.pageXOffset > sticky) {
+  if(window.pageYOffset > sticky) {
     grabElement.style.position = 'fixed';
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
     grabElement.style.transition = transitionTime;
     for(var i = 0; i < grabList.length; i++) {
       grabList[i].style.color = 'black';
-    }
+    } 
+  } else if(window.pageXOffset > sticky) {
+      grabElement.style.position = 'fixed';
   } else {
     grabElement.style.position = 'absolute';
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
