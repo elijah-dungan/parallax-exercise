@@ -59,25 +59,13 @@ function makeTransparent() { // makes navbar transparent, used with onmouseout.
 
 /* -----------------------------------------------Navigation Bar----------------------------------------------- */
 
+/* -------------------------------------------------Sub Header------------------------------------------------- */
 
+$(window).scroll(function() { // gets scroll position and multiplies by number to increase/decrease speed, adds this as px to CSS property.
+  var scroll_position = $(window).scrollTop() * 0.50; 
+  $('body').css({
+    'background-position-y' : - scroll_position + 'px',
+  })
+})
 
-
-
-
-
-/*
-var states = ['washington', 'arizona', 'california'];
-for(var i = 0; i < 7; i++) { //# of tries
-  var guessStates = prompt('Guess which states I have lived in.').toLowerCase();
-  for(var s = 0; s < states.length; s++) {
-    var guess = states[s]
-    if(guessStates === guess) {
-      alert('You guessed right! The answers were ' + states[0] + ', ' + states[1] + ', and ' + states[2]);
-      i = 7;
-      break;
-    } else {
-      alert('Guess again.');
-      break;
-    }
-  }
-}*/
+/* -------------------------------------------------Sub Header------------------------------------------------- */
