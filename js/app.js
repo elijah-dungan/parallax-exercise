@@ -1,8 +1,9 @@
+    
 // When the user scrolls the page, execute myFunction 
 window.onscroll = function() {makeSticky()};
 
 // Get the header
-var header = document.getElementById("stickyheader");
+var header = document.getElementById("stickynav");
 
 // Get the offset position of the navbar
 var sticky = header.offsetTop;

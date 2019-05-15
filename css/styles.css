@@ -6,21 +6,15 @@ body {
     background-color: black;
     margin: 0; /* removes default margins from body */
 }
-#stickyheader {
-    background-color: green;
-    border: 2px solid red;
-    padding: 10px;
-}
-nav {
+#stickynav {
     background-color: yellow;
     border: 2px solid red;
-    text-align: center;
-    width: auto;
     overflow: auto; /* prevents container from collapsing on ul float */
 }
 nav ul { /* contains the ul bullets */
     border: 2px solid red;
     background-color: white;
+    width: 100%;
     float: left; /* moves ul to the left of nav */
     width: 25%
 }
@@ -31,6 +25,12 @@ nav ul li{ /* contains the list strings */
     background-color: white;
     display: inline-block; /* displays list horizonally */
     margin: 0 10% 0 10%; /* sets space between strings */
+}
+header {
+    background-color: green;
+    border: 2px solid red;
+    padding: 10px;
+    min-width: 960px;
 }
 main {
     display: inline-block;
@@ -49,8 +49,8 @@ main {
     width: auto;
     z-index: 999;
 }
-.sticky + main {
-    padding-top: 201px;
+.sticky + header {
+    padding-top: 72.8px;
 }
 footer {
     border: 2px solid red;
