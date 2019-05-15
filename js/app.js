@@ -1,18 +1,13 @@
     
 /* -----------------------------------------------Navigation Bar----------------------------------------------- */
 
+window.onscroll = function() {makeSticky()}; // When the user scrolls the page, execute makeSticky. 
 
-// When the user scrolls the page, execute makeSticky. 
-window.onscroll = function() {makeSticky()};
+var nav = document.getElementById('stickynav'); // Get the nav element, id="stickynav".
 
-// Get the nav element, id="stickynav".
-var nav = document.getElementById('stickynav');
+var sticky = nav.offsetTop; // Get the offset position of the navbar.
 
-// Get the offset position of the navbar.
-var sticky = nav.offsetTop;
-
-// makes navbar sticky upon scroll. Removes sticky when scroll is returned to beginning y position.
-function makeSticky() {
+function makeSticky() { // makes navbar sticky upon scroll. Removes sticky when scroll is returned to beginning y position.
   var grabElement = document.getElementById('stickynav');
   var grabList = document.getElementsByClassName('navListItem');
   if(window.pageYOffset > sticky) {
@@ -34,33 +29,31 @@ function makeSticky() {
   }
 }
 
-// sets transition time for CSS fade-in fade out animation
-var transitionTime = '0.6s';
+var transitionTime = '0.6s'; // sets transition time for CSS fade-in fade out animation
 
-// makes navbar opaque, used with onmouseover.
-function makeOpaque() {
+function makeOpaque() { // makes navbar opaque, used with onmouseover.
   if (window.pageYOffset < nav.offsetTop) {
   } else {
     var grabElement = document.getElementById('stickynav');
     var grabList = document.getElementsByClassName('navListItem');
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
     grabElement.style.transition = transitionTime;
-      for(var i = 0; i < grabList.length; i++) {
-        grabList[i].style.color = 'black';
-      }
+    for(var i = 0; i < grabList.length; i++) {
+      grabList[i].style.color = 'black';
+    }
   }
 }
-// makes navbar transparent, used with onmouseout.
-function makeTransparent() {
+
+function makeTransparent() { // makes navbar transparent, used with onmouseout.
   if (window.pageYOffset > nav.offsetTop) {
   } else {
     var grabElement = document.getElementById('stickynav');
     var grabList = document.getElementsByClassName('navListItem');
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
     grabElement.style.transition = transitionTime;
-      for(var i = 0; i < grabList.length; i++) {
-        grabList[i].style.color = 'white';
-      }
+    for(var i = 0; i < grabList.length; i++) {
+      grabList[i].style.color = 'white';
+    }
   }
 }
 
