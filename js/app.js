@@ -13,16 +13,22 @@ var sticky = nav.offsetTop;
 
 // makes navbar sticky upon scroll. Removes sticky when scroll is returned to beginning y position.
 function makeSticky() {
+  var grabElement = document.getElementById('stickynav');
+  var grabList = document.getElementsByClassName('navListItem');
   if(window.pageYOffset > sticky || window.pageXOffset > sticky) {
-    var grabElement = document.getElementById('stickynav');
     grabElement.style.position = 'fixed';
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
     grabElement.style.transition = transitionTime;
+    for(var i = 0; i < grabList.length; i++) {
+      grabList[i].style.color = 'black';
+    }
   } else {
-    var grabElement = document.getElementById('stickynav');
     grabElement.style.position = 'absolute';
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
     grabElement.style.transition = transitionTime;
+    for(var i = 0; i < grabList.length; i++) {
+      grabList[i].style.color = 'white';
+    }
   }
 }
 
@@ -31,15 +37,29 @@ var transitionTime = '0.6s';
 
 // makes navbar opaque, used with onmouseover.
 function makeOpaque() {
-  var grabElement = document.getElementById('stickynav');
-  grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
-  grabElement.style.transition = transitionTime;
+  if (window.pageYOffset < nav.offsetTop) {
+  } else {
+    var grabElement = document.getElementById('stickynav');
+    var grabList = document.getElementsByClassName('navListItem');
+    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
+    grabElement.style.transition = transitionTime;
+      for(var i = 0; i < grabList.length; i++) {
+        grabList[i].style.color = 'black';
+      }
+  }
 }
 // makes navbar transparent, used with onmouseout.
 function makeTransparent() {
-  var grabElement = document.getElementById('stickynav');
-  grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
-  grabElement.style.transition = transitionTime;
+  if (window.pageYOffset > nav.offsetTop) {
+  } else {
+    var grabElement = document.getElementById('stickynav');
+    var grabList = document.getElementsByClassName('navListItem');
+    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+    grabElement.style.transition = transitionTime;
+      for(var i = 0; i < grabList.length; i++) {
+        grabList[i].style.color = 'white';
+      }
+  }
 }
 
 /* -----------------------------------------------Navigation Bar----------------------------------------------- */

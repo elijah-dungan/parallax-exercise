@@ -4,7 +4,7 @@
     font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }
 body {
-    background-color: white;
+    background-color: rgb(255, 115, 80);;
     margin: 0; /* removes default margins from body */
 }
 #stickynav {
@@ -12,38 +12,38 @@ body {
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: rgb(255, 255, 255, 0);
+    background-color: rgb(0, 0, 0, 0);
     padding: 0 0 0 0;
-    transition: 0.6s;
     overflow: auto; /* prevents container from collapsing on ul float */
 }
 nav ul { /* contains the ul bullets */
-    background-color: rgb(255, 255, 255, 0);
+    background-color: rgb(0, 0, 0, 0);
     margin: 0;
     padding: 8px;
 }
-nav ul li{ /* contains the list strings */
+.navListItem { /* contains the list strings */
     font-size: 1em;
-    color: black;
     padding: 2px;
-    border: 1px solid rgb(255, 255, 255, 0);
+    border: 1px solid rgb(0, 0, 0, 0);
+    transition: 0.6s;
     text-decoration: none;
-    background-color: rgb(255, 255, 255, 0);
+    background-color: rgb(0, 0, 0, 0);
     display: inline-block; /* displays list horizonally */
     margin: 0 5% 0 5%; /* sets space between strings */
 }
-nav ul li:hover {
+.navListItem:hover {
     border: 1px solid black;
     padding: 2px;
+  
 }
 header {
-    background-color: rgb(255, 115, 80);
+    background-color: rgb(151, 61, 96);
     padding: 73px 10px 10px 10px;
     min-width: 960px;
 }
 main {
     display: inline-block;
-    background-color: blue;
+    background-color: rgb(255, 115, 80);
     width: 960px;
     margin: 0 0 -5px 0; /* top margin ensures that top of lower container does not initially hide behind header */
     overflow: auto; /* keeps parent container from collapsing on left and right floats */
@@ -55,26 +55,26 @@ footer {
     min-width: 960px;
 }
 h1 {
-    background-color: rgb(255, 115, 80);
+    background-color: rgb(151, 61, 96);
     padding: 10px;
     text-align: left;
 }
 h2 {
-    background-color: rgb(151, 61, 96);
+
     padding: 10px;
 }
 p {
-    background-color: white;
+    background-color: rgb(255, 115, 80);
     padding: 10px;
 }
 #left {
-    background-color: orange;
+    background-color: rgb(255, 115, 80);
     float: left;
     width: 47.4%;
     padding: 10px;
 }
 #right {
-    background-color: teal;
+    background-color: rgb(255, 115, 80);
     float: right;
     width: 47.4%;
     padding: 10px;
