@@ -1,11 +1,22 @@
+html {
+    scroll-behavior: smooth;
+}
 * {
     color: white;
     text-align: center;
     font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }
 body {
-    background-color: rgb(255, 115, 80);;
+    background-image: url("https://homeworks.umcommunities.org/wp-content/uploads/sites/10/2016/11/iStock_76299425_LARGE.jpg");
+    background-repeat: no-repeat;
+    background-position: -390px 42px;
+    background-attachment: fixed; 
+    background-size: cover; /* makes background image responsive */
     margin: 0; /* removes default margins from body */
+}
+#subheader { /* transparent element allowing visibility of background image */
+    background-color: rgb(0, 0, 0, 0);
+    padding: 285px;
 }
 #stickynav {
     position: absolute;
@@ -18,7 +29,7 @@ body {
 }
 nav ul { /* contains the ul bullets */
     background-color: rgb(0, 0, 0, 0);
-    margin: 0;
+    margin: 0; /* removes default margins */
     padding: 8px;
 }
 .navListItem { /* contains the list strings */
@@ -39,20 +50,20 @@ nav ul { /* contains the ul bullets */
 header {
     background-color: rgb(151, 61, 96);
     padding: 73px 10px 10px 10px;
-    min-width: 960px;
+    min-width: 750px;
 }
 main {
     display: inline-block;
     background-color: rgb(255, 115, 80);
-    width: 960px;
-    margin: 0 0 -5px 0; /* top margin ensures that top of lower container does not initially hide behind header */
-    overflow: auto; /* keeps parent container from collapsing on left and right floats */
+    min-width: 750px;
+    margin: 0 0 0 0; /* top margin ensures that top of lower container does not initially hide behind header */
     padding: 10px;
 }
 footer {
     background-color: rgb(151, 61, 96);
     padding: 10px;
-    min-width: 960px;
+    min-width: 750px;
+    min-height: 100px;
 }
 h1 {
     background-color: rgb(151, 61, 96);
@@ -60,22 +71,34 @@ h1 {
     text-align: left;
 }
 h2 {
-
     padding: 10px;
 }
-p {
-    background-color: rgb(255, 115, 80);
+h3 {
     padding: 10px;
 }
-#left {
-    background-color: rgb(255, 115, 80);
-    float: left;
-    width: 47.4%;
+.article_text {
+    background-color: rgb(255, 115, 80, 0);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     padding: 10px;
 }
-#right {
+#copyright {
+    display: inline-block;
+    background-color: rgb(151, 61, 96, 0);
+    padding: 10px;
+}
+.flex_box_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left_article {
     background-color: rgb(255, 115, 80);
-    float: right;
-    width: 47.4%;
+    width: auto;
+    padding: 10px;
+}
+.right_article {
+    background-color: rgb(255, 115, 80);
+    width: auto;
     padding: 10px;
 }
