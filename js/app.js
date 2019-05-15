@@ -1,21 +1,55 @@
     
-// When the user scrolls the page, execute myFunction 
+/* -----------------------------------------------Navigation Bar----------------------------------------------- */
+
+
+// When the user scrolls the page, execute makeSticky. 
 window.onscroll = function() {makeSticky()};
 
-// Get the header
-var header = document.getElementById("stickynav");
+// Get the nav element, id="stickynav".
+var nav = document.getElementById('stickynav');
 
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
+// Get the offset position of the navbar.
+var sticky = nav.offsetTop;
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+// makes navbar sticky upon scroll. Removes sticky when scroll is returned to beginning y position.
 function makeSticky() {
-  if (window.pageYOffset > sticky || window.pageXOffset > sticky) {
-    header.classList.add("sticky");
+  if(window.pageYOffset > sticky || window.pageXOffset > sticky) {
+    var grabElement = document.getElementById('stickynav');
+    grabElement.style.position = 'fixed';
+    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
+    grabElement.style.transition = transitionTime;
   } else {
-    header.classList.remove("sticky");
+    var grabElement = document.getElementById('stickynav');
+    grabElement.style.position = 'absolute';
+    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+    grabElement.style.transition = transitionTime;
   }
 }
+
+// sets transition time for CSS fade-in fade out animation
+var transitionTime = '0.6s';
+
+// makes navbar opaque, used with onmouseover.
+function makeOpaque() {
+  var grabElement = document.getElementById('stickynav');
+  grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
+  grabElement.style.transition = transitionTime;
+}
+// makes navbar transparent, used with onmouseout.
+function makeTransparent() {
+  var grabElement = document.getElementById('stickynav');
+  grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+  grabElement.style.transition = transitionTime;
+}
+
+/* -----------------------------------------------Navigation Bar----------------------------------------------- */
+
+
+
+
+
+
+
 /*
 var states = ['washington', 'arizona', 'california'];
 for(var i = 0; i < 7; i++) { //# of tries

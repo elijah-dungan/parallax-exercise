@@ -1,89 +1,81 @@
 * {
-    color: black;
+    color: white;
     text-align: center;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }
 body {
-    background-color: black;
+    background-color: white;
     margin: 0; /* removes default margins from body */
 }
 #stickynav {
-    background-color: yellow;
-    border: 2px solid red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgb(255, 255, 255, 0);
+    padding: 0 0 0 0;
+    transition: 0.6s;
     overflow: auto; /* prevents container from collapsing on ul float */
 }
 nav ul { /* contains the ul bullets */
-    border: 2px solid red;
-    background-color: white;
-    width: 100%;
-    float: left; /* moves ul to the left of nav */
-    width: 25%
+    background-color: rgb(255, 255, 255, 0);
+    margin: 0;
+    padding: 8px;
 }
 nav ul li{ /* contains the list strings */
-    border: 2px solid red;
     font-size: 1em;
+    color: black;
+    padding: 2px;
+    border: 1px solid rgb(255, 255, 255, 0);
     text-decoration: none;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0);
     display: inline-block; /* displays list horizonally */
-    margin: 0 10% 0 10%; /* sets space between strings */
+    margin: 0 5% 0 5%; /* sets space between strings */
+}
+nav ul li:hover {
+    border: 1px solid black;
+    padding: 2px;
 }
 header {
-    background-color: green;
-    border: 2px solid red;
-    padding: 10px;
+    background-color: rgb(255, 115, 80);
+    padding: 73px 10px 10px 10px;
     min-width: 960px;
 }
 main {
     display: inline-block;
     background-color: blue;
-    border: 2px solid red;
     width: 960px;
     margin: 0 0 -5px 0; /* top margin ensures that top of lower container does not initially hide behind header */
     overflow: auto; /* keeps parent container from collapsing on left and right floats */
     padding: 10px;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: auto;
-    z-index: 999;
-}
-.sticky + header {
-    padding-top: 72.8px;
-}
 footer {
-    border: 2px solid red;
-    background-color: purple;
+    background-color: rgb(151, 61, 96);
     padding: 10px;
     min-width: 960px;
 }
 h1 {
-    border: 2px solid red;
-    background-color: white;
+    background-color: rgb(255, 115, 80);
     padding: 10px;
+    text-align: left;
 }
 h2 {
-    border: 2px solid red;
-    background-color: white;
+    background-color: rgb(151, 61, 96);
     padding: 10px;
 }
 p {
-    border: 2px solid red;
     background-color: white;
     padding: 10px;
 }
 #left {
-    border: 2px solid red;
     background-color: orange;
     float: left;
-    width: 47%;
+    width: 47.4%;
     padding: 10px;
 }
 #right {
-    border: 2px solid red;
     background-color: teal;
     float: right;
-    width: 47%;
+    width: 47.4%;
     padding: 10px;
 }
