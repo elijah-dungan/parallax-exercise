@@ -14,13 +14,12 @@ body {
     background-attachment: fixed; 
     background-position-x: /* 0px; */ -390px; 
     background-size: cover;
-    min-height: 70%;
     margin: 0; /* removes default margins from body */
 }
 #subheader { /* transparent element allowing visibility of background image */
     background-color: rgb(0, 0, 0, 0);
     min-width: 320px;
-    height: 537px; /* controls gap between header and main */
+    height: 757px; /* controls gap between header and main */
 }
 #stickynav {
     position: absolute;
@@ -36,6 +35,10 @@ nav ul { /* contains the ul bullets */
     margin: 0; /* removes default margins */
     padding: 8px;
 }
+nav ul li {
+    display: inline-block; /* displays list horizonally */
+    margin: 0 5% 0 5%; /* sets space between strings */
+}
 .navListItem { /* contains the list strings */
     font-size: 1em;
     padding: 2px;
@@ -43,8 +46,6 @@ nav ul { /* contains the ul bullets */
     transition: 0.6s;
     text-decoration: none;
     background-color: rgb(0, 0, 0, 0);
-    display: inline-block; /* displays list horizonally */
-    margin: 0 5% 0 5%; /* sets space between strings */
 }
 .navListItem:hover {
     border: 1px solid black;
@@ -52,11 +53,13 @@ nav ul { /* contains the ul bullets */
   
 }
 #magic_header {
-    position: relative;
+    position: fixed;
     background-color: rgb(151, 61, 96, 1);
     padding: 10px 10px 10px 10px;
     min-width: 320px;
-    height: 200px;
+    left: 0;
+    right: 0;
+    height: 250px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,14 +67,14 @@ nav ul { /* contains the ul bullets */
     z-index: -2;
 }
 #logo {
-    padding: 0 0 0 0;
+    padding: 40px 0 0 0;
     position: fixed;
-    width: auto; /* 39%; */
+    width: 535px; /* 39%; */
     height: auto;
-    min-width: 178px;
-    min-height: 42px;
-    max-height: 128px;
-    max-width: 535px;
+    /* min-width: 178px; */
+    /* min-height: 42px; */
+    /* max-height: 128px; */
+    /* max-width: 535px; */
     z-index: -1;
     opacity: 1;
     filter: alpha(opacity=100);
@@ -89,16 +92,20 @@ footer {
     min-width: 320px;
     min-height: 100px;
 }
-h1 { /* not being used */ 
-    background-color: rgb(151, 61, 96, 0);
-    padding: 10px;
-    text-align: left;
+h1 {  
+    background-color: rgb(255, 115, 80);
+    font-size: 3em;
+    padding: 40px 0 0 0;
+    text-align: center;
+    margin: 0;
 }
 h2 {
     padding: 10px;
+    margin: 0;
 }
 h3 {
     padding: 10px;
+    margin: 0;
 }
 .article_text {
     background-color: rgb(255, 115, 80, 0);
