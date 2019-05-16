@@ -3,76 +3,44 @@ makeSticky(); // preloads function to prevent offset of Nav Bar.
 animate(); // preloads function to prevent misfire of animation dependent on page4Offset.
 window.onscroll = function() {makeSticky()}; // when the user scrolls the page, executes makeSticky. 
 /* ---------------------------------------------------Pre-load--------------------------------------------------- */
-/* -------------------------------------------------Declarations------------------------------------------------- */
-var grabElement = document.getElementById('stickynav');
-var sticky = grabElement.offsetTop; // Get the offset position of the navbar.
-var grabList = document.getElementsByClassName('navListItem');
+/* ----------------------------------------------Global Declarations--------------------------------------------- */
+var grabElement = document.getElementById('stickynav'); // gets the navbar element.
+var sticky = grabElement.offsetTop; // gets the offset position of the navbar.
+var grabList = document.getElementsByClassName('navListItem'); // gets the links in the navbar.
 var transitionTime = '0.6s'; // sets transition time for CSS fade-in fade out animation
-/* -------------------------------------------------Declarations------------------------------------------------- */
-/* ----------------------------------------------------Nav Bar--------------------------------------------------- */
-function makeSticky() { // makes navbar sticky upon scroll. Removes sticky when scroll is returned to beginning y position.
+/* ----------------------------------------------Global Declarations--------------------------------------------- */
+/* ----------------------------------------------Nav Bar and Header---------------------------------------------- */
+function makeSticky() { // makes navbar sticky upon scroll
   var grabElement = document.getElementById('stickynav');
   var grabList = document.getElementsByClassName('navListItem');
   var grabHeader = document.getElementById('magic_header')
-  if(window.pageYOffset > sticky) {
+  if(window.pageYOffset > sticky) { // when scrolling down, makes navbar sticky and transparent while removing the header.
     grabElement.style.position = 'fixed';
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0.9)';
     grabElement.style.transition = transitionTime;
     grabHeader.style.backgroundColor = 'rgb(151, 61, 96, 0)';
     grabHeader.style.transition = transitionTime;
-    for(var i = 0; i < grabList.length; i++) {
-      grabList[i].style.color = 'black';
-    } 
-  } else if(window.pageXOffset > sticky) {
+  } else if(window.pageXOffset > sticky) { // when scrolling horizontally, maintains the style of the navbar and header.
       grabElement.style.position = 'fixed';
-      grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+      grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0.9)';
       grabHeader.style.backgroundColor = 'rgb(151, 61, 96, 1)';
-      for(var i = 0; i < grabList.length; i++) {
-        grabList[i].style.color = 'white';
-    }
-  } else {
+  } else { // when scrolled to top position, resets styles of the navbar and header.
       grabElement.style.position = 'fixed';
-      grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+      grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
       grabElement.style.transition = transitionTime;
       grabHeader.style.backgroundColor = 'rgb(151, 61, 96, 1)';
       grabHeader.style.transition = transitionTime;
-      for(var i = 0; i < grabList.length; i++) {
-        grabList[i].style.color = 'white';
-      }
-    }
-}
-function makeOpaque() { // makes navbar opaque, used with onmouseover.
-  if (window.pageYOffset < sticky) {
-  } else {
-    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0.9)';
-    grabElement.style.transition = transitionTime;
-    for(var i = 0; i < grabList.length; i++) {
-      grabList[i].style.color = 'black';
-    }
   }
 }
-function makeTransparent() { // makes navbar transparent, used with onmouseout.
-  if (window.pageYOffset > sticky) {
-  } else {
-    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
-    grabElement.style.transition = transitionTime;
-    for(var i = 0; i < grabList.length; i++) {
-      grabList[i].style.color = 'white';
-    }
-  }
-}
-/* ----------------------------------------------------Nav Bar--------------------------------------------------- */
-
-function animate() {
-/* --------------------------------------------------Sub Header-------------------------------------------------- */
+/* ----------------------------------------------Nav Bar and Header---------------------------------------------- */
+/* ------------------------------------------------Logo and Body------------------------------------------------- */
+function animate() { // scrolls background image up while fading logo when user scrolls down.
   $(window).scroll(function() { // gets scroll position and multiplies by number to increase/decrease speed, adds this as px to CSS property.
     var scroll_position = $(window).scrollTop() * 0.50; // change rate of speed here.
-    $('body').css({
-      'background-position-y' : - scroll_position + 'px',
+    $('body').css({ 
+      'background-position-y' : - scroll_position + 'px', // change y to x for horizontal scroll effect.
     })
   })
-/* --------------------------------------------------Sub Header-------------------------------------------------- */
-/* -----------------------------------------------------Logo----------------------------------------------------- */
   $(window).scroll(function() { // gets scroll position and multiplies by number to fade, changes alpha to CSS property.
     var scroll_position = $(window).scrollTop() / -450; // change rate of fade here.
     $('#logo').css({
@@ -80,13 +48,5 @@ function animate() {
       'filter' : ' alpha(opacity=' + ++ scroll_position * 100 + ')'
     })
   })
-/* -----------------------------------------------------Logo----------------------------------------------------- */
-/* ----------------------------------------------------header---------------------------------------------------- 
-  $(window).scroll(function() { // gets scroll position and multiplies by number to fade, changes alpha to CSS property.
-    var scroll_position = $(window).scrollTop() / -75; // change rate of fade here.
-    $('#magic_header').css({
-      'background-color' : 'rgba(151,61,96,' + ++ scroll_position + ')'
-    })
-  })
- ----------------------------------------------------header---------------------------------------------------- */
 }
+/* ------------------------------------------------Logo and Body------------------------------------------------- */
