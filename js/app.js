@@ -1,7 +1,7 @@
-/* -----------------------------------------------Navigation Bar----------------------------------------------- */
+/* -----------------------------------------------Nav Bar + Header----------------------------------------------- */
 
-makeSticky();
-window.onscroll = function() {makeSticky()}; // When the user scrolls the page, execute makeSticky. 
+makeSticky(); // preloads function to prevent offset of Nav Bar.
+window.onscroll = function() {makeSticky()}; // when the user scrolls the page, executes makeSticky. 
 
 var nav = document.getElementById('stickynav'); // Get the nav element, id="stickynav".
 
@@ -65,15 +65,27 @@ function makeTransparent() { // makes navbar transparent, used with onmouseout.
   }
 }
 
-/* -----------------------------------------------Navigation Bar----------------------------------------------- */
+/* -----------------------------------------------Nav Bar + Header----------------------------------------------- */
 
-/* -------------------------------------------------Sub Header------------------------------------------------- */
+/* --------------------------------------------------Sub Header-------------------------------------------------- */
 
 $(window).scroll(function() { // gets scroll position and multiplies by number to increase/decrease speed, adds this as px to CSS property.
-  var scroll_position = $(window).scrollTop() * 0.50; 
+  var scroll_position = $(window).scrollTop() * 0.50; // change rate of speed here.
   $('body').css({
     'background-position-y' : - scroll_position + 'px',
   })
 })
 
-/* -------------------------------------------------Sub Header------------------------------------------------- */
+/* --------------------------------------------------Sub Header-------------------------------------------------- */
+
+/* -----------------------------------------------------Logo----------------------------------------------------- */
+
+$(window).scroll(function() { // gets scroll position and multiplies by number to fade, changes alpha to CSS property.
+  var scroll_position = $(window).scrollTop() / -550; // change rate of fade here.
+  $('#logo').css({
+    'opacity' : ++ scroll_position, 
+    //'filter' : ' alpha(opacity=' + ++ scroll_position * 100 + ');'
+  })
+})
+
+/* -----------------------------------------------------Logo----------------------------------------------------- */
