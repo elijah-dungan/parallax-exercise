@@ -1,6 +1,6 @@
-    
 /* -----------------------------------------------Navigation Bar----------------------------------------------- */
 
+makeSticky();
 window.onscroll = function() {makeSticky()}; // When the user scrolls the page, execute makeSticky. 
 
 var nav = document.getElementById('stickynav'); // Get the nav element, id="stickynav".
@@ -10,18 +10,26 @@ var sticky = nav.offsetTop; // Get the offset position of the navbar.
 function makeSticky() { // makes navbar sticky upon scroll. Removes sticky when scroll is returned to beginning y position.
   var grabElement = document.getElementById('stickynav');
   var grabList = document.getElementsByClassName('navListItem');
+  var grabHeader = document.getElementById('magic_header')
   if(window.pageYOffset > sticky) {
     grabElement.style.position = 'fixed';
-    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
+    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0.9)';
     grabElement.style.transition = transitionTime;
+    grabHeader.style.backgroundColor = 'rgb(151, 61, 96, 0)';
     for(var i = 0; i < grabList.length; i++) {
       grabList[i].style.color = 'black';
     } 
   } else if(window.pageXOffset > sticky) {
       grabElement.style.position = 'fixed';
+      grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+      grabHeader.style.backgroundColor = 'rgb(151, 61, 96, 1)';
+      for(var i = 0; i < grabList.length; i++) {
+        grabList[i].style.color = 'white';
+      }
   } else {
-    grabElement.style.position = 'absolute';
+    grabElement.style.position = 'fixed';
     grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0)';
+    grabHeader.style.backgroundColor = 'rgb(151, 61, 96, 1)';
     grabElement.style.transition = transitionTime;
     for(var i = 0; i < grabList.length; i++) {
       grabList[i].style.color = 'white';
@@ -36,7 +44,7 @@ function makeOpaque() { // makes navbar opaque, used with onmouseover.
   } else {
     var grabElement = document.getElementById('stickynav');
     var grabList = document.getElementsByClassName('navListItem');
-    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 1)';
+    grabElement.style.backgroundColor = 'rgb(255, 255, 255, 0.9)';
     grabElement.style.transition = transitionTime;
     for(var i = 0; i < grabList.length; i++) {
       grabList[i].style.color = 'black';
