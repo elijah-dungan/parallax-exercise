@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 * {
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }
@@ -26,7 +26,7 @@ body {
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: rgb(0, 0, 0, 0);
+    background-color: rgb(255, 255, 255);
     padding: 0 0 0 0;
     overflow: auto; /* prevents container from collapsing on ul float */
 }
@@ -42,13 +42,14 @@ nav ul li {
 .navListItem { /* contains the list strings */
     font-size: 1em;
     padding: 2px;
+    color: rgb(0, 0, 0);
     border: 1px solid rgb(0, 0, 0, 0);
     transition: 0.6s;
     text-decoration: none;
     background-color: rgb(0, 0, 0, 0);
 }
 .navListItem:hover {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     padding: 2px;
   
 }
@@ -109,8 +110,8 @@ h3 {
 }
 .article_text {
     background-color: rgb(255, 115, 80, 0);
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
     padding: 10px;
 }
 #copyright {
