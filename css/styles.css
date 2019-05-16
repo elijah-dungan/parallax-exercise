@@ -7,16 +7,18 @@ html {
     font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }
 body {
+    background-color: rgb(255, 115, 80);
     background-image: url("https://homeworks.umcommunities.org/wp-content/uploads/sites/10/2016/11/iStock_76299425_LARGE.jpg");
+    /*background-image: url("https://s3.amazonaws.com/46hca/HCA/tx-hca-main-video-website-ff.jpg");*/
     position: relative;
     background-attachment: fixed; 
-    background-position-x: -390px;
+    background-position-x: /*0px;*/ -390px;
     background-size: cover;
     margin: 0; /* removes default margins from body */
 }
 #subheader { /* transparent element allowing visibility of background image */
     background-color: rgb(0, 0, 0, 0);
-    padding: 285px;
+    padding: 250px; /* controls gap between header and main */
 }
 #stickynav {
     position: absolute;
@@ -47,15 +49,33 @@ nav ul { /* contains the ul bullets */
     padding: 2px;
   
 }
-header {
+#magic_header {
+    position: relative;
     background-color: rgb(151, 61, 96);
-    padding: 73px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     min-width: 750px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: -2;
+}
+#logo {
+    padding: 0 0 0 0;
+    position: fixed;
+    width: auto; /* 39%; */
+    height: auto;
+    min-width: 178px;
+    min-height: 42px;
+    max-height: 128px;
+    max-width: 535px;
+    z-index: -1;
 }
 main {
     display: inline-block;
     background-color: rgb(255, 115, 80);
-    min-width: 750px;
+    min-width: 750px; 
     margin: 0 0 0 0; /* top margin ensures that top of lower container does not initially hide behind header */
     padding: 10px;
 }
@@ -66,7 +86,7 @@ footer {
     min-height: 100px;
 }
 h1 {
-    background-color: rgb(151, 61, 96);
+    background-color: rgb(151, 61, 96), 0;
     padding: 10px;
     text-align: left;
 }
