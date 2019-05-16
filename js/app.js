@@ -1,6 +1,6 @@
 /* ---------------------------------------------------Pre-load--------------------------------------------------- */
-makeSticky(); // preloads function to prevent offset of Nav Bar.
-animate(); // preloads function to prevent misfire of animation dependent on page4Offset.
+makeSticky(); // preloads function to prevent offset of navbar.
+animate(); // preloads function to prevent misfire of animation dependent on browser scrollbar position.
 window.onscroll = function() {makeSticky()}; // when the user scrolls the page, executes makeSticky. 
 /* ---------------------------------------------------Pre-load--------------------------------------------------- */
 /* ----------------------------------------------Global Declarations--------------------------------------------- */
